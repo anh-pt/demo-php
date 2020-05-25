@@ -27,3 +27,9 @@ route::get('/controller/add','Demo01Controller@add');
 Route::get('/controller/edit/{iduser}','Demo01Controller@edit')
 ->where(['iduser'=>'[0-9]+']);
 Route::get('chuc-mung-sinh-nhat-bac-{id}.html','Demo01Controller@sinh');
+Route::get('demo/{ten}',"MyController@index");
+
+Route::get('GetForm',function(){
+     return view('form1');
+});
+Route::post('form1',['as'=>'form1','uses'=>'MyController@form1']);
