@@ -25,7 +25,9 @@ route::get('/controller/add','Demo01Controller@add');
 //jjsahdsjad
 // Route::get('/controller/edit/{iduser}','Demo01Controller@edit');
 Route::get('/controller/edit/{iduser}','Demo01Controller@edit')
-->where(['iduser'=>'[0-9]+']);
+->where(['iduser'=>'[0-9]+'])->name('Demo01.edit');
+
+
 Route::get('chuc-mung-sinh-nhat-bac-{id}.html','Demo01Controller@sinh');
 Route::get('demo/{ten}',"MyController@index");
 
@@ -33,3 +35,8 @@ Route::get('GetForm',function(){
      return view('form1');
 });
 Route::post('form1',['as'=>'form1','uses'=>'MyController@form1']);
+
+Route::get('demo2/add','Demo01Controller@add')->name('Demo01.add');
+
+route::redirect('/adc','https://vnexpres.net');
+//thử nghiệm truy cập vào wed site
