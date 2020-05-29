@@ -40,3 +40,11 @@ Route::get('demo2/add','Demo01Controller@add')->name('Demo01.add');
 
 route::redirect('/adc','https://vnexpres.net');
 //thử nghiệm truy cập vào wed site
+
+route::get('demo01/bang-du-lieu.html',
+'Demo01Controller@BangDuLieuDemo');
+Route::get('demo01/them-du-lieu.html','Demo01Controller@ThemDuLieu');
+
+Route::get('/user','UserController@index')->name('layout.index');
+Route::get('user/add','UserController@add')->name('layout.add');
+Route::get('user/save','UserController@save')->name('user.save');
