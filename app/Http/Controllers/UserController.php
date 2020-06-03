@@ -10,6 +10,7 @@ class UserController extends Controller
     function index()
     {   
         $query = DB::table('users');
+        
         $query->orderBy('id','desc');
         $table = $query->get();
         return view('layout.index',['list'=>$table]);
@@ -33,4 +34,5 @@ class UserController extends Controller
     {
         print_r($request->all());
     }
+    
 }
